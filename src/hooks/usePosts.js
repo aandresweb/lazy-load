@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import getPosts from "services/getPosts";
-import useInfiniteScroll from "./useInfiniteScroll";
 
 const DEFAULT_START = 0;
 const DEFAULT_LIMIT = 10;
@@ -11,8 +10,6 @@ function usePosts({ inifiniteAdditionalPosts }) {
   const [loading, setLoading] = useState(false);
   const [start, setStart] = useState(DEFAULT_START);
   const [limit, setLimit] = useState(DEFAULT_LIMIT);
-
-  // const { handleInfiniteScroll, infiniteScrollLoading } = useInfiniteScroll();
 
   let FETCH_OPTIONS = {
     start,
@@ -28,12 +25,6 @@ function usePosts({ inifiniteAdditionalPosts }) {
       fetchMerge();
     }
   }, [start]);
-
-  const fetchPosts = (fetchinOptions = FETCH_OPTIONS) => {
-    getPosts({ ...FETCH_OPTIONS, ...fetchinOptions }).then((data) => {
-      setPosts(data);
-    });
-  };
 
   const loadPosts = () => {
     setLoading(true);
@@ -54,13 +45,11 @@ function usePosts({ inifiniteAdditionalPosts }) {
   };
 
   const handleInfinite = () => {
-    // handleInfiniteScroll();
-    // setStart(start + inifiniteAdditionalPosts);
+    setStart(start + inifiniteAdditionalPosts);
   };
 
   return {
     posts,
-    fetchPosts,
     loading,
     handleInfinite,
     inifiniteLoading,

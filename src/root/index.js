@@ -1,5 +1,4 @@
 import PostCard from "components/PostCard";
-import useInfiniteScroll from "hooks/useInfiniteScroll";
 import useNearScreen from "hooks/useNearScreen";
 import usePosts from "hooks/usePosts";
 import React from "react";
@@ -7,18 +6,12 @@ import "./index.css";
 
 function Root() {
   const { nearFired, disableNearFired } = useNearScreen();
-  const { posts, fetchPosts, loading, handleInfinite, inifiniteLoading } =
-    usePosts({
-      inifiniteAdditionalPosts: 10,
-    });
-
-  const { handleInfiniteScroll } = useInfiniteScroll({
-    fetching: fetchPosts,
+  const { posts, loading, handleInfinite, inifiniteLoading } = usePosts({
+    inifiniteAdditionalPosts: 10,
   });
 
   if (nearFired) {
-    handleInfiniteScroll();
-    // handleInfinite();
+    handleInfinite();
     disableNearFired();
   }
 
