@@ -46,6 +46,7 @@
   --font-regular: "ProductSans Regular";
   --font-title: "Gotham Black";
 
+  --font-size-small: 0.8rem;
   --font-size-regular: 1rem;
   --font-size-medium: 2rem;
   --font-size-large: 4rem;
@@ -153,7 +154,7 @@ a:hover {
 }
 
 .wrapper {
-  padding: 0 35%;
+  padding: 0 20%;
 }
 
 .highlight {

@@ -1,0 +1,9 @@
+.posts {
+  min-height: 100vh;
+}
+.posts-layout {
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5%;
+  row-gap: 50px;
+  display: grid;
+}

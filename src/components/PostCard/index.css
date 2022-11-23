@@ -1,0 +1,27 @@
+.post-card {
+  border: 1px solid;
+  border-color: #dedede30;
+  border-radius: 5px;
+  padding: 7%;
+}
+
+.post-title {
+  font-family: var(--font-title);
+  text-transform: capitalize;
+}
+
+.post-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-author,
+.post-date {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.post-info-text {
+  font-size: var(--font-size-small) !important;
+}
