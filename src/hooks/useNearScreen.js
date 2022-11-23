@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
-const DEFAULT_VALUES = {
-  distance: "100px",
-};
+const DEFAULT_DISTANCE = "100px";
 
-const useNearScreen = () => {
+const useNearScreen = ({ distance = DEFAULT_DISTANCE } = {}) => {
   const [nearFired, setNearFired] = useState(false);
   const fromRef = useRef();
 
@@ -19,7 +17,7 @@ const useNearScreen = () => {
     };
 
     observer = new IntersectionObserver(onChangeIntersectionObserver, {
-      rootMargin: "50px",
+      rootMargin: distance,
     });
 
     observer.observe(document.getElementById("footer"));

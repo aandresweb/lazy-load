@@ -9,7 +9,7 @@ function usePosts({ inifiniteAdditionalPosts }) {
   const [inifiniteLoading, setInfiniteLoading] = useState(false);
   const [loading, setLoading] = useState(false);
   const [start, setStart] = useState(DEFAULT_START);
-  const [limit, setLimit] = useState(DEFAULT_LIMIT);
+  const [limit] = useState(DEFAULT_LIMIT);
 
   let FETCH_OPTIONS = {
     start,

@@ -5,7 +5,9 @@ import React from "react";
 import "./index.css";
 
 function Root() {
-  const { nearFired, disableNearFired } = useNearScreen();
+  const { nearFired, disableNearFired } = useNearScreen({
+    distance: "1px",
+  });
   const { posts, loading, handleInfinite, inifiniteLoading } = usePosts({
     inifiniteAdditionalPosts: 10,
   });
@@ -21,9 +23,9 @@ function Root() {
         <div className="mt-xlarge">
           <p className="title text-center mb-large">Lazy load</p>
           <p className="text text-center wrapper mb-xlarge">
-            Welcome to my project where i'm practicing use Lazy loading
-            components using <b>Suspense</b> and <b>Lazy</b> react
-            functionalities, i'm so happy you are here becaure you are part of
+            Welcome to my project where i've learned <b>Lazy load</b> using{" "}
+            <b>Intersection Observer</b>
+            functionalities, i'm so happy you are here because you are part of
             my learning now 🤍
           </p>
           <div className="posts">
